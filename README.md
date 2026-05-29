@@ -1,8 +1,8 @@
-# Trigger Discovery
+# Whitespace
 
 > Collect brand knowledge with **Tavily**, simulate realistic user prompts, surface and rank high-intent **search triggers**, and review them in a dashboard before ad testing.
 
-Trigger Discovery turns a single brand domain into a ranked, auditable list of keyword/phrase "triggers" you might want to advertise against. It crawls the brand's public web presence, normalizes the content into reusable facts, generates synthetic user prompts across intent buckets, retrieves the most relevant facts per prompt, extracts recurring phrases, scores them, and presents everything in a review UI with full source traceability.
+Whitespace turns a single brand domain into a ranked, auditable list of keyword/phrase "triggers" you might want to advertise against. It crawls the brand's public web presence, normalizes the content into reusable facts, generates synthetic user prompts across intent buckets, retrieves the most relevant facts per prompt, extracts recurring phrases, scores them, and presents everything in a review UI with full source traceability.
 
 Full product spec: [tavily-cursor-agent-plan.md](./tavily-cursor-agent-plan.md) · Work split: [TEAM.md](./TEAM.md)
 
