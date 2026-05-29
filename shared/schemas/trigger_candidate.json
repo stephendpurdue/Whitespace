@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/trigger_candidate.json",
+  "title": "TriggerCandidate",
+  "type": "object",
+  "required": [
+    "trigger_candidate_id",
+    "brand_id",
+    "batch_run_id",
+    "phrase",
+    "phrase_type",
+    "intent_bucket",
+    "trigger_score",
+    "recommended_action"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "trigger_candidate_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "batch_run_id": { "type": "string", "format": "uuid" },
+    "phrase": { "type": "string", "minLength": 1 },
+    "phrase_type": { "type": "string", "enum": ["unigram", "bigram", "keyphrase", "entity"] },
+    "intent_bucket": { "type": "string" },
+    "appearance_count": { "type": "integer", "minimum": 0 },
+    "appearance_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+    "avg_rank_position": { "type": "number" },
+    "brand_proximity_score": { "type": "number" },
+    "commercial_intent_score": { "type": "number" },
+    "competitor_overlap_score": { "type": "number" },
+    "source_coverage": { "type": "number" },
+    "trigger_score": { "type": "number" },
+    "recommended_action": {
+      "type": "string",
+      "enum": ["prioritize", "test", "monitor", "deprioritize"]
+    },
+    "prompt_run_ids": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" }
+    },
+    "source_page_ids": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" }
+    },
+    "score_breakdown": {
+      "type": "object",
+      "properties": {
+        "frequency_score": { "type": "number" },
+        "intent_score": { "type": "number" },
+        "relevance_score": { "type": "number" },
+        "distinctiveness_score": { "type": "number" },
+        "ambiguity_penalty": { "type": "number" }
+      }
+    }
+  }
+}

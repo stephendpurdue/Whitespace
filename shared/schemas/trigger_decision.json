@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/trigger_decision.json",
+  "title": "TriggerDecision",
+  "type": "object",
+  "required": ["trigger_decision_id", "trigger_candidate_id", "brand_id", "decision", "decided_at"],
+  "additionalProperties": false,
+  "properties": {
+    "trigger_decision_id": { "type": "string", "format": "uuid" },
+    "trigger_candidate_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "decision": {
+      "type": "string",
+      "enum": ["approve", "reject", "too_broad", "mark_for_testing"]
+    },
+    "note": { "type": "string" },
+    "decided_at": { "type": "string", "format": "date-time" },
+    "decided_by": { "type": "string" }
+  }
+}

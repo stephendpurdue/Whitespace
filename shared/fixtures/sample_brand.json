@@ -1,0 +1,9 @@
+{
+  "brand_id": "00000000-0000-4000-8000-000000000001",
+  "name": "Acme Analytics",
+  "primary_domain": "acme-analytics.example",
+  "competitor_domains": ["rival-metrics.example"],
+  "seed_topics": ["product analytics", "funnel reporting"],
+  "created_at": "2026-05-28T12:00:00Z",
+  "updated_at": "2026-05-28T12:00:00Z"
+}

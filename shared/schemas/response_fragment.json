@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/response_fragment.json",
+  "title": "ResponseFragment",
+  "type": "object",
+  "required": ["response_fragment_id", "prompt_run_id", "text", "rank_position"],
+  "additionalProperties": false,
+  "properties": {
+    "response_fragment_id": { "type": "string", "format": "uuid" },
+    "prompt_run_id": { "type": "string", "format": "uuid" },
+    "source_page_id": { "type": "string", "format": "uuid" },
+    "text": { "type": "string" },
+    "rank_position": { "type": "integer", "minimum": 1 },
+    "snippet_score": { "type": "number" }
+  }
+}

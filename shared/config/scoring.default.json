@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "weights": {
+    "frequency": 0.3,
+    "intent": 0.25,
+    "relevance": 0.25,
+    "distinctiveness": 0.15,
+    "ambiguity_penalty": 0.05
+  },
+  "thresholds": {
+    "prioritize": 0.75,
+    "test": 0.55,
+    "monitor": 0.35
+  },
+  "formula": "trigger_score = frequency_score + intent_score + relevance_score + distinctiveness_score - ambiguity_penalty"
+}

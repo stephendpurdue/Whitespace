@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/batch_run.json",
+  "title": "BatchRun",
+  "type": "object",
+  "required": ["batch_run_id", "brand_id", "run_type", "status", "started_at"],
+  "additionalProperties": false,
+  "properties": {
+    "batch_run_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "run_type": { "type": "string", "enum": ["ingestion", "analysis"] },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "running", "completed", "failed", "partial"]
+    },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "scoring_config_version": { "type": "string" },
+    "stats": {
+      "type": "object",
+      "additionalProperties": { "type": "number" }
+    },
+    "errors": {
+      "type": "array",
+      "items": { "$ref": "error.json" }
+    }
+  }
+}

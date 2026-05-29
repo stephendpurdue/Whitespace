@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/prompt.json",
+  "title": "Prompt",
+  "type": "object",
+  "required": ["prompt_id", "brand_id", "text", "intent_bucket", "persona"],
+  "additionalProperties": false,
+  "properties": {
+    "prompt_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "text": { "type": "string", "minLength": 1 },
+    "intent_bucket": {
+      "type": "string",
+      "enum": [
+        "informational",
+        "commercial_investigation",
+        "transactional",
+        "comparison",
+        "problem_solution",
+        "alternative_switching"
+      ]
+    },
+    "persona": { "type": "string" },
+    "is_high_intent": { "type": "boolean", "default": false },
+    "seed_fact_ids": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" },
+      "default": []
+    }
+  }
+}

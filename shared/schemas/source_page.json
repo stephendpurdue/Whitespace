@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/source_page.json",
+  "title": "SourcePage",
+  "type": "object",
+  "required": ["source_page_id", "brand_id", "url", "page_type", "last_crawled_at"],
+  "additionalProperties": false,
+  "properties": {
+    "source_page_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "url": { "type": "string", "format": "uri" },
+    "page_type": {
+      "type": "string",
+      "enum": [
+        "homepage",
+        "product",
+        "pricing",
+        "docs",
+        "blog",
+        "comparison",
+        "other"
+      ]
+    },
+    "title": { "type": "string" },
+    "raw_content_path": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "source_type": { "type": "string", "enum": ["tavily_crawl", "tavily_extract"] },
+    "last_crawled_at": { "type": "string", "format": "date-time" },
+    "content_hash": { "type": "string" }
+  }
+}

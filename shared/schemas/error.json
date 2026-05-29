@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/error.json",
+  "title": "Error",
+  "type": "object",
+  "required": ["code", "message"],
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "type": "string",
+      "enum": [
+        "TAVILY_CRAWL_FAILED",
+        "TAVILY_EXTRACT_FAILED",
+        "NORMALIZATION_FAILED",
+        "RETRIEVAL_FAILED",
+        "PARTIAL_RUN",
+        "MISSING_BRAND_DATA",
+        "VALIDATION_ERROR"
+      ]
+    },
+    "message": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "details": { "type": "object" }
+  }
+}

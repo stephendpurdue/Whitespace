@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/prompt_run.json",
+  "title": "PromptRun",
+  "type": "object",
+  "required": ["prompt_run_id", "prompt_id", "brand_id", "batch_run_id", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "prompt_run_id": { "type": "string", "format": "uuid" },
+    "prompt_id": { "type": "string", "format": "uuid" },
+    "brand_id": { "type": "string", "format": "uuid" },
+    "batch_run_id": { "type": "string", "format": "uuid" },
+    "status": { "type": "string", "enum": ["pending", "running", "completed", "failed"] },
+    "source_page_ids": {
+      "type": "array",
+      "items": { "type": "string", "format": "uuid" },
+      "default": []
+    },
+    "response_text": { "type": "string" },
+    "ran_at": { "type": "string", "format": "date-time" }
+  }
+}

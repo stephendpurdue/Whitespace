@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cursor-hack.local/schemas/brand.json",
+  "title": "Brand",
+  "type": "object",
+  "required": ["brand_id", "name", "primary_domain", "created_at"],
+  "additionalProperties": false,
+  "properties": {
+    "brand_id": { "type": "string", "format": "uuid" },
+    "name": { "type": "string", "minLength": 1 },
+    "primary_domain": { "type": "string", "format": "hostname" },
+    "competitor_domains": {
+      "type": "array",
+      "items": { "type": "string", "format": "hostname" },
+      "default": []
+    },
+    "seed_topics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  }
+}
